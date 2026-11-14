@@ -26,6 +26,7 @@ class Solution {
     private void dfs(TreeNode currentNode, List<Integer> resultList) {
         if (currentNode == null) return;
         dfs(currentNode.left, resultList);  
-        resultList.add(currentNode.val);     
+        resultList.add(currentNode.val);    
         dfs(currentNode.right, resultList);  
+    }
 }
