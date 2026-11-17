@@ -1,0 +1,21 @@
+class NumArray {
+    private int[] preSum; //定义成员变量，存前缀后缀和数组
+
+    public NumArray(int[] nums) {
+        int n = nums.length;
+        preSum = new int[n + 1];
+        for (int i = 0; i < n; i++) {
+            preSum[i + 1] = preSum[i] + nums[i];
+        }
+    }
+    
+    public int sumRange(int left, int right) {
+        return preSum[right + 1] - preSum[left];
+    }
+}
+
+/**
+ * Your NumArray object will be instantiated and called as such:
+ * NumArray obj = new NumArray(nums);
+ * int param_1 = obj.sumRange(left,right);
+ */
